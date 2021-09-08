@@ -6,53 +6,74 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check in/Check out" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Tonight"
-        android:inputType="date" />
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Tonight"
+            android:inputType="date" />
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        <Button
+            android:id="@+id/minusAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:text="-" />
 
-    <Button
-        android:id="@+id/minusAdult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="left"
-        android:text="-" />
+        <TextView
+            android:id="@+id/counterChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 adult" />
 
-    <Button
-        android:id="@+id/plusAdult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="+" />
+        <Button
+            android:id="@+id/plusAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="+" />
 
-    <Button
-        android:id="@+id/minusChild"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="-" />
+        <Button
+            android:id="@+id/minusChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-" />
 
-    <Button
-        android:id="@+id/plusChild"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="+" />
+        <TextView
+            android:id="@+id/counterAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 children" />
 
-    <Button
-        android:id="@+id/findHotel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find Hotels" />
+        <Button
+            android:id="@+id/plusChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+" />
+        </TableRow>
+        <Button
+            android:id="@+id/scheduleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find Hotels" />
+    </LinearLayout>
 
-</LinearLayout>
+
+    </LinearLayout>
