@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     // Creating instances of buttons and Textviews & var definition
     Button childMinus, childPlus, adultMinus, adultPlus, scheduleButton;
     TextView childCount, adultCount;
-    int adultTotal;
-    int childTotal;
+    public static int adultTotal;
+    public static int childTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
         scheduleButton = findViewById(R.id.scheduleButton);
 
+        this.childTotal = MainActivity2.childTotal;
+        this.adultTotal = MainActivity2.adultTotal;
+
         // Event listeners for +/- buttons
         childMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 childTotal--;
                 if (childTotal < 0) {
-                    childCount.setText("0");
+                    childTotal = 0;
+                    childCount.setText("0 children");
                 }
-                childCount.setText(Integer.toString(childTotal));
+                childCount.setText(Integer.toString(childTotal) + " children");
             }
         });
 
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 childTotal++;
-                childCount.setText(Integer.toString(childTotal));
+                childCount.setText(Integer.toString(childTotal) + " children");
             }
         });
 
@@ -58,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 adultTotal--;
                 if (adultTotal < 0) {
-                    adultCount.setText("0");
+                    adultTotal = 0;
+                    adultCount.setText("0 adults");
                 }
-                adultCount.setText(Integer.toString(adultTotal));
+                adultCount.setText(Integer.toString(adultTotal) + " adults");
             }
         });
 
@@ -68,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 adultTotal++;
-                adultCount.setText(Integer.toString(adultTotal));
+                adultCount.setText(Integer.toString(adultTotal) + " adults");
             }
         });
 
