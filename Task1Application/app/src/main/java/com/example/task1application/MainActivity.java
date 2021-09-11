@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     // Creating instances of buttons and Textviews & var definition
     Button childMinus, childPlus, adultMinus, adultPlus, scheduleButton;
     TextView childCount, adultCount;
-    public static int adultTotal;
-    public static int childTotal;
+    public static int adultTotal = 0;
+    public static int childTotal = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
         adultCount = findViewById(R.id.counterAdult);
 
         scheduleButton = findViewById(R.id.scheduleButton);
-
-        this.childTotal = MainActivity2.childTotal;
-        this.adultTotal = MainActivity2.adultTotal;
 
         // Event listeners for +/- buttons
         childMinus.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, MainActivity2.class);
+                String adultTotalCount = adultCount.toString();
+                String childTotalCount = childCount.toString();
                 startActivity(i);
             }
         });

@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
-    public static int childTotal;
-    public static int adultTotal;
+public class MainActivity2 extends AppCompatActivity
     TextView results;
 
     @Override
