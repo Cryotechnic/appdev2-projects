@@ -1,97 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <LinearLayout
+
+    <!-- Location -->
+    <TextView
+        android:id="@+id/locationDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Las Vegas, NV"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/viewLocation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/welcomeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?android:attr/buttonStyleSmall"
-            android:text="Las Vegas, NV" />
+        android:layout_height="1dp"
+        android:layout_below="@id/buttonMinus1"
+        android:background="@android:color/darker_gray" />
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+    <ImageView
+        android:id="@+id/imageCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_baseline_navigation_24" />
 
-            <Button
-                android:id="@+id/minusAdult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                style="?android:attr/buttonStyleSmall"
-                android:text="-" />
-
-            <TextView
-                android:id="@+id/counterAdult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:text="0 guests" />
-
-            <Button
-                android:id="@+id/plusAdult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:paddingRight="10dp"
-                style="?android:attr/buttonStyleSmall"
-                android:text="+" />
-
-            <Button
-                android:id="@+id/minusChild"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?android:attr/buttonStyleSmall"
-                android:text="-" />
-
-            <TextView
-                android:id="@+id/counterChild"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:text="0 rooms" />
-
-            <Button
-                android:id="@+id/plusChild"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?android:attr/buttonStyleSmall"
-                android:text="+" />
-        </TableRow>
-
-        <Button
-            android:id="@+id/todayButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?android:attr/buttonStyleSmall"
-            android:text="Today" />
-
-        <Button
-            android:id="@+id/tmrwButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?android:attr/buttonStyleSmall"
-            android:text="Tomorrow" />
-
-        <Button
-            android:id="@+id/scheduleButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?android:attr/buttonStyleSmall"
-            android:text="Book Hotels" />
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/arrowNav1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
 
-</LinearLayout>
+    <!-- Guests -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPlus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewGuests"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#FE9200"
+        android:text="+"
+        app:cornerRadius="33dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMinus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewGuests"
+        android:layout_toLeftOf="@+id/buttonPlus1"
+        android:backgroundTint="#FE9200"
+        android:text="-"
+        app:cornerRadius="33dp" />
+
+    <TextView
+        android:id="@+id/guestsDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewGuests"
+        android:layout_marginLeft="30dp"
+        android:text="0 Guests"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/viewGuests"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/imageCompass"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/imageGuests"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/viewGuests"
+        app:srcCompat="@drawable/ic_baseline_people_24" />
+
+    <!-- Rooms -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPlus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewLocation"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="#FE9200"
+        android:text="+"
+        app:cornerRadius="33dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMinus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewLocation"
+        android:layout_toLeftOf="@+id/buttonPlus1"
+        android:backgroundTint="#FE9200"
+        android:text="-"
+        app:cornerRadius="33dp" />
+
+    <TextView
+        android:id="@+id/roomsDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewLocation"
+        android:layout_marginLeft="30dp"
+        android:text="0 Rooms"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/viewRooms"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/imageHotel"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/imageHotel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/viewLocation"
+        app:srcCompat="@drawable/ic_baseline_hotel_24" />
+
+    <!-- Today -->
+    <TextView
+        android:id="@+id/todayDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/viewRooms"
+        android:text="Today"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/viewToday"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/imageToday"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/imageToday"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/viewRooms"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+
+    <ImageView
+        android:id="@+id/arrowNav2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/viewRooms"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+    <!-- Tomorrow -->
+    <TextView
+        android:id="@+id/tmrwDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/viewToday"
+        android:text="Tomorrow"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/viewTmrw"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/imageTmrw"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/imageTmrw"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/viewToday"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <ImageView
+        android:id="@+id/arrowNav3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/viewToday"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+</RelativeLayout>
