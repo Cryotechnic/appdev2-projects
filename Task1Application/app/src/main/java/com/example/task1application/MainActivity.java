@@ -13,8 +13,7 @@ public class MainActivity extends AppCompatActivity {
     // Creating instances of buttons and Textviews & var definition
     Button childMinus, childPlus, adultMinus, adultPlus, scheduleButton;
     TextView childCount, adultCount;
-    public static int adultTotal = 0;
-    public static int childTotal = 0;
+    int adultTotal, childTotal = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +79,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, MainActivity2.class);
-                String adultTotalCount = adultCount.toString();
-                String childTotalCount = childCount.toString();
+                String adultTotalCount = Integer.toString(adultTotal);
+                String childTotalCount = Integer.toString(childTotal);
+                i.putExtra("adultResult", adultTotalCount);
+                i.putExtra("childrenCount", childTotalCount);
                 startActivity(i);
             }
         });

@@ -2,11 +2,13 @@ package com.example.task1application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity
+public class MainActivity2 extends AppCompatActivity {
     TextView results;
+    String childTotal, adultTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +17,12 @@ public class MainActivity2 extends AppCompatActivity
 
         // Binding object to view
         results = findViewById(R.id.resultsText);
+
+        // Get intent from Main class
+        Intent i = getIntent();
+
+        childTotal = i.getStringExtra("childrenCount");
+        adultTotal = i.getStringExtra("adultResult");
 
         results.setText("You have: " + childTotal + " children booked and " + adultTotal + " adults booked.");
     }
