@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
     Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bPlus, bMinus, bTimes, bDiv, bEq, bReset;
     EditText results;
 
+    double val1, val2;
+    boolean add, sub, mult, div;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +109,72 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 results.setText(results.getText() + "9");
+            }
+        });
+
+        bReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                results.setText("");
+            }
+        });
+
+        bDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                results.setText(results.getText() + ".");
+            }
+        });
+
+        bPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (results.getText() == null) {
+                    results.setText("");
+                } else {
+                    val1 = Double.parseDouble(results.getText() + "");
+                    add = true;
+                    results.setText(null);
+                }
+            }
+        });
+
+        bMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (results.getText() == null) {
+                    results.setText("");
+                } else {
+                    val1 = Double.parseDouble(results.getText() + "");
+                    sub = true;
+                    results.setText(null);
+                }
+            }
+        });
+
+        bTimes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (results.getText() == null) {
+                    results.setText("");
+                } else {
+                    val1 = Double.parseDouble(results.getText() + "");
+                    mult = true;
+                    results.setText(null);
+                }
+            }
+        });
+
+        bDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (results.getText() == null) {
+                    results.setText("");
+                } else {
+                    val1 = Double.parseDouble(results.getText() + "");
+                    div = true;
+                    results.setText(null);
+                }
             }
         });
     }
