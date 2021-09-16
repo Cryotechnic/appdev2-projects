@@ -177,5 +177,27 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        bEq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                val2 = Double.parseDouble(results.getText() + "");
+
+                if (add == true) {
+                    results.setText(val1 + val2 + "");
+                    add = false;
+                } else if (sub == true) {
+                    results.setText(val1 - val2 + "");
+                    sub = false;
+                } else if (mult == true) {
+                    results.setText(val1 * val2 + "");
+                    mult = false;
+                } else if (div == true) {
+                    results.setText(val1 / val2 + "");
+                    div = false;
+                } else {
+                    results.setText("If it somehow got here, you probably touched the code of the app and broke it!");
+                }
+            }
+        });
     }
 }
